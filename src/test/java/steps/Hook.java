@@ -32,6 +32,7 @@ public class Hook extends BaseUtil {
 
     @After
     public void tearDown(Scenario scenario) {
+        //if(scenario.getStatus().equalsIgnoreCase("failed")){
         if (scenario.isFailed()) {
             try {
                 //Take screenshot logic goes here

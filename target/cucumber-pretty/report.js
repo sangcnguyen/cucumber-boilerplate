@@ -7,7 +7,7 @@ formatter.feature({
   "keyword": "Feature"
 });
 formatter.before({
-  "duration": 3417881419,
+  "duration": 3468149400,
   "status": "passed"
 });
 formatter.scenario({
@@ -58,37 +58,37 @@ formatter.match({
   "location": "LoginStep.iNavigateToTheLoginPage()"
 });
 formatter.result({
-  "duration": 5194800324,
+  "duration": 6115059878,
   "status": "passed"
 });
 formatter.match({
   "location": "LoginStep.iEnterTheFollowingForLogin(DataTable)"
 });
 formatter.result({
-  "duration": 291744393,
+  "duration": 348545271,
   "status": "passed"
 });
 formatter.match({
   "location": "LoginStep.iClickLoginButton()"
 });
 formatter.result({
-  "duration": 2093034454,
+  "duration": 2261528803,
   "status": "passed"
 });
 formatter.match({
   "location": "LoginStep.iShouldSeeTheUserformPage()"
 });
 formatter.result({
-  "duration": 46989358,
+  "duration": 48778214,
   "status": "passed"
 });
 formatter.write("Scenario passed");
 formatter.after({
-  "duration": 850654183,
+  "duration": 851818748,
   "status": "passed"
 });
 formatter.before({
-  "duration": 2023640722,
+  "duration": 1970107842,
   "status": "passed"
 });
 formatter.scenario({
@@ -139,33 +139,33 @@ formatter.match({
   "location": "LoginStep.iNavigateToTheLoginPage()"
 });
 formatter.result({
-  "duration": 5106478191,
+  "duration": 5778557343,
   "status": "passed"
 });
 formatter.match({
   "location": "LoginStep.iEnterTheFollowingForLogin(DataTable)"
 });
 formatter.result({
-  "duration": 400438260,
+  "duration": 411421526,
   "status": "passed"
 });
 formatter.match({
   "location": "LoginStep.iClickLoginButton()"
 });
 formatter.result({
-  "duration": 1408668037,
+  "duration": 1522017552,
   "status": "passed"
 });
 formatter.match({
   "location": "LoginStep.iShouldSeeTheUserformPageWrongly()"
 });
 formatter.result({
-  "duration": 85933684,
+  "duration": 96758425,
   "status": "passed"
 });
 formatter.write("Scenario passed");
 formatter.after({
-  "duration": 887476917,
+  "duration": 931132740,
   "status": "passed"
 });
 });
