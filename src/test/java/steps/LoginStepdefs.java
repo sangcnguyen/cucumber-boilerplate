@@ -1,53 +1,45 @@
 package steps;
 
-import Base.BaseUtil;
+import base.BaseUtil;
 import cucumber.api.DataTable;
-import cucumber.api.PendingException;
-import cucumber.api.java.en.And;
-import cucumber.api.java.en.Given;
-import cucumber.api.java.en.Then;
+import io.cucumber.java.en.And;
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import model.User;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import pages.LoginPage;
 
-import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by Sang Nguyen on 1/7/2017
- */
-public class LoginStep extends BaseUtil {
+public class LoginSteps {
     private BaseUtil base;
+    private WebDriver driver;
+    private LoginPage loginPage = new LoginPage(driver);
 
-    public LoginStep(BaseUtil base) {
-        this.base = base;
-    }
 
     @Given("^I navigate to the login page$")
     public void iNavigateToTheLoginPage() {
         System.out.println("Navigate Login Page");
-        base.driver.navigate().to("https://demo.moodle.net/login/index.php");
+        base.driver.navigate().to("https://sandbox.moodledemo.net/login/index.php");
     }
 
     @And("^I enter the following for Login$")
     public void iEnterTheFollowingForLogin(DataTable table) {
-        // Create an ArrayList
-        List<User> users = new ArrayList<User>();
-
         // Store all the users
-        users = table.asList(User.class);
+        List<User> users = table.asList(User.class);
 
         LoginPage page = new LoginPage(base.driver);
 
         for (User user : users) {
-            page.logIn(user.username, user.password);
+            page.logIn(user.getUsername(), user.getPassword());
         }
     }
 
     @And("^I click login button$")
     public void iClickLoginButton() {
-        LoginPage page = new LoginPage(base.driver);
-        page.clickLogin();
+        loginPage.clickLogin();
     }
 
     @Then("^I should see the userform page$")
@@ -63,16 +55,6 @@ public class LoginStep extends BaseUtil {
 
     @Then("^I should see the userform page wrongly$")
     public void iShouldSeeTheUserformPageWrongly() {
-        Assert.assertEquals("Invalid login, please try again", base.driver.findElement(By.xpath("//*[@id=\"region-main\"]/div/div[2]/div/div/div/div[2]/div")).getText());
-    }
-
-    public class User {
-        public String username;
-        public String password;
-
-        public User(String userName, String passWord) {
-            username = userName;
-            password = passWord;
-        }
+        Assert.assertEquals("Invalid login, please try again", loginPage.getErrorMessage());
     }
 }

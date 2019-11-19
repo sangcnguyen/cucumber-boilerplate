@@ -1,2 +1,3 @@
 .idea
-SeleniumWithCucumber.iml
+*.iml
+target
