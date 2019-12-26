@@ -1,28 +1,29 @@
 package pages;
 
 
+import base.BasePage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 
-/**
- * Created by Sang Nguyen on 1/7/2017
- */
-public class LoginPage {
+public class LoginPage extends BasePage {
 
-    public LoginPage(WebDriver driver) {
-        PageFactory.initElements(driver, this);
+    public LoginPage(WebDriver webDriver) {
+        super(webDriver);
+        path = "/login/index.php?lang=en_us";
     }
 
     @FindBy(name = "username")
-    public WebElement txtUserName;
+    private WebElement txtUserName;
 
     @FindBy(name = "password")
-    public WebElement txtPassword;
+    private WebElement txtPassword;
 
     @FindBy(id = "loginbtn")
-    public WebElement btnLogin;
+    private WebElement btnLogin;
+
+    @FindBy(id = "loginerrormessage")
+    private WebElement errMessage;
 
     public void logIn(String userName, String password) {
         txtUserName.clear();
@@ -33,5 +34,9 @@ public class LoginPage {
 
     public void clickLogin() {
         btnLogin.submit();
+    }
+
+    public String getErrorMessage() {
+        return errMessage.getText();
     }
 }

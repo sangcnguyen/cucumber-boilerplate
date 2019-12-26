@@ -1,7 +1,6 @@
 package steps;
 
-import base.BaseUtil;
-import cucumber.api.DataTable;
+import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -13,48 +12,45 @@ import pages.LoginPage;
 
 import java.util.List;
 
-public class LoginSteps {
-    private BaseUtil base;
-    private WebDriver driver;
+public class LoginStepdefs {
+    WebDriver driver;
     private LoginPage loginPage = new LoginPage(driver);
 
 
     @Given("^I navigate to the login page$")
-    public void iNavigateToTheLoginPage() {
+    public void i_navigate_to_the_login_page() {
         System.out.println("Navigate Login Page");
-        base.driver.navigate().to("https://sandbox.moodledemo.net/login/index.php");
+        loginPage.goToPage();
     }
 
     @And("^I enter the following for Login$")
-    public void iEnterTheFollowingForLogin(DataTable table) {
+    public void i_enter_the_following_for_login(DataTable table) {
         // Store all the users
         List<User> users = table.asList(User.class);
 
-        LoginPage page = new LoginPage(base.driver);
-
         for (User user : users) {
-            page.logIn(user.getUsername(), user.getPassword());
+            loginPage.logIn(user.getUsername(), user.getPassword());
         }
     }
 
     @And("^I click login button$")
-    public void iClickLoginButton() {
+    public void i_click_login_button() {
         loginPage.clickLogin();
     }
 
     @Then("^I should see the userform page$")
-    public void iShouldSeeTheUserformPage() {
-        Assert.assertEquals("Welcome!", base.driver.findElement(By.xpath("//*[@id=\"region-main\"]/div/div/div[1]/div/h5/b")).getText());
+    public void i_should_see_the_userform_page() {
+        Assert.assertEquals("Welcome!", driver.findElement(By.xpath("//*[@id=\"region-main\"]/div/div/div[1]/div/h5/b")).getText());
     }
 
     @And("^I enter ([^\"]*) and ([^\"]*)$")
-    public void iEnterUsernameAndPassword(String userName, String password) {
+    public void i_enter_username_and_password(String userName, String password) {
         System.out.println("UserName is : " + userName);
         System.out.println("Password is : " + password);
     }
 
     @Then("^I should see the userform page wrongly$")
-    public void iShouldSeeTheUserformPageWrongly() {
+    public void i_should_see_the_userform_page_wrongly() {
         Assert.assertEquals("Invalid login, please try again", loginPage.getErrorMessage());
     }
 }

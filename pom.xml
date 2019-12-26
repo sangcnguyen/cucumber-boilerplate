@@ -5,58 +5,53 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>groupId</groupId>
-    <artifactId>SeleniumWithCucumber</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <groupId>com.github.sn</groupId>
+    <artifactId>selenium-with-cucumber</artifactId>
+    <version>1.0</version>
 
     <properties>
-        <cucumber-java.version>1.2.5</cucumber-java.version>
-        <cucumber-testng.version>1.2.5</cucumber-testng.version>
+        <cucumber.version>4.8.0</cucumber.version>
         <selenium.version>3.8.1</selenium.version>
         <testng.version>6.13.1</testng.version>
-        <cucumber-picocontainer.version>1.2.5</cucumber-picocontainer.version>
+        <webdrivermanager.version>3.7.1</webdrivermanager.version>
         <java.version>1.8</java.version>
         <maven-cucumber-reporting.version>3.13.0</maven-cucumber-reporting.version>
     </properties>
 
     <dependencies>
         <dependency>
-            <groupId>info.cukes</groupId>
+            <groupId>io.cucumber</groupId>
             <artifactId>cucumber-java</artifactId>
-            <version>${cucumber-java.version}</version>
+            <version>${cucumber.version}</version>
         </dependency>
-
         <dependency>
-            <groupId>info.cukes</groupId>
+            <groupId>io.cucumber</groupId>
             <artifactId>cucumber-testng</artifactId>
-            <version>${cucumber-testng.version}</version>
+            <version>${cucumber.version}</version>
         </dependency>
-
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-picocontainer</artifactId>
+            <version>${cucumber.version}</version>
+        </dependency>
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
             <version>${selenium.version}</version>
         </dependency>
+        <!--        <dependency>-->
+        <!--            <groupId>org.testng</groupId>-->
+        <!--            <artifactId>testng</artifactId>-->
+        <!--            <version>${testng.version}</version>-->
+        <!--            <scope>test</scope>-->
+        <!--        </dependency>-->
 
         <dependency>
-            <groupId>org.testng</groupId>
-            <artifactId>testng</artifactId>
-            <version>${testng.version}</version>
+            <groupId>io.github.bonigarcia</groupId>
+            <artifactId>webdrivermanager</artifactId>
+            <version>${webdrivermanager.version}</version>
             <scope>test</scope>
         </dependency>
-
-        <dependency>
-            <groupId>info.cukes</groupId>
-            <artifactId>cucumber-picocontainer</artifactId>
-            <version>${cucumber-picocontainer.version}</version>
-            <scope>test</scope>
-        </dependency>
-
-        <!-- <dependency>
-             <groupId>net.masterthought</groupId>
-             <artifactId>cucumber-reporting</artifactId>
-             <version></version>
-         </dependency>-->
     </dependencies>
 
     <build>
