@@ -4,7 +4,6 @@ import cucumber.TestContext;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
 import pages.HomePage;
-import selenium.Wait;
 
 public class HomePageSteps {
     TestContext testContext;
