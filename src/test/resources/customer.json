@@ -1,0 +1,26 @@
+[
+  {
+    "firstName": "Sang",
+    "lastName": "Sharma",
+    "emailAddress": "Lakshay@Gmail.com",
+    "phoneNumber": "012345678",
+    "address": {
+      "streetAddress": "Shalimar Bagh",
+      "city": "HCM",
+      "postCode": "110088",
+      "country": "Vietnam"
+    }
+  },
+  {
+    "firstName": "Virender",
+    "lastName": "Singh",
+    "emailAddress": "test@gmail.com",
+    "phoneNumber": "012345678",
+    "address": {
+      "streetAddress": "Palam Vihar",
+      "city": "HCM",
+      "postCode": "122345",
+      "country": "Vietnam"
+    }
+  }
+]
