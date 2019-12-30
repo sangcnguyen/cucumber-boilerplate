@@ -6,21 +6,21 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class ScenarioContext {
-    private Map<String, Object> scenarioContext;
+    private Map<String, Object> context;
 
     public ScenarioContext() {
-        scenarioContext = new HashMap<>();
+        context = new HashMap<>();
     }
 
     public void setContext(Context key, Object value) {
-        scenarioContext.put(key.toString(), value);
+        context.put(key.toString(), value);
     }
 
     public Object getContext(Context key) {
-        return scenarioContext.get(key.toString());
+        return context.get(key.toString());
     }
 
     public Boolean isContains(Context key) {
-        return scenarioContext.containsKey(key.toString());
+        return context.containsKey(key.toString());
     }
 }

@@ -10,6 +10,10 @@ import java.util.function.Function;
 
 public class Wait {
 
+    private Wait() {
+        throw new IllegalStateException("Utility class");
+    }
+
     public static void untilJqueryIsDone(WebDriver webDriver) {
         untilJqueryIsDone(webDriver, FileReaderManager.getInstance().getConfigReader().getImplicitlyWait());
     }
