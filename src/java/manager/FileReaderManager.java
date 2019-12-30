@@ -4,7 +4,7 @@ import reader.ConfigReader;
 import reader.JsonReader;
 
 public class FileReaderManager {
-    private static FileReaderManager fileReaderManager = new FileReaderManager();
+    private static FileReaderManager instance;
     private static ConfigReader configReader;
     private static JsonReader jsonReader;
 
@@ -12,7 +12,10 @@ public class FileReaderManager {
     }
 
     public static FileReaderManager getInstance() {
-        return fileReaderManager;
+        if (instance == null) {
+            instance = new FileReaderManager();
+        }
+        return instance;
     }
 
     public ConfigReader getConfigReader() {
