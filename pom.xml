@@ -10,7 +10,7 @@
     <version>1.0</version>
 
     <properties>
-        <cucumber.version>4.8.0</cucumber.version>
+        <cucumber.version>5.7.0</cucumber.version>
         <selenium.version>3.8.1</selenium.version>
         <testng.version>6.13.1</testng.version>
         <webdrivermanager.version>3.7.1</webdrivermanager.version>
